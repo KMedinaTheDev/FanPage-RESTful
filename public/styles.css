@@ -1,0 +1,51 @@
+body{
+  background:url("stlamp.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  color: rgba(215, 166, 18, 0.82);
+  font-family: 'Rammetto One', cursive;
+}
+button{
+  background: rgb(232, 159, 139)
+}
+form{
+margin-left: 40%;
+color: rgba(215, 166, 18, 0.82);
+
+}
+h1{
+  float: left;
+  font-size: 4em;
+  margin:.5% 0 0 35%;
+
+
+}
+h2{
+  clear: left;
+  font-size: 2.5em;
+  margin: 6% 0 0 42%;
+
+}
+h4{
+  float: left;
+  margin-left: 42%;
+}
+h5{
+  float: left;
+  margin: 15% 0 0 40%;
+}
+footer {
+  clear:left;
+  margin-left: 43%;
+}
+
+
+li{
+  list-style: none;
+  text-align: center;
+}
+ ul{
+  clear: both;
+  margin:10% 0 0 5%;
+  border-radius: 5px;
+}
