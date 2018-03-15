@@ -52,7 +52,7 @@ app.put('/thumbDown', (req, res) => {
   db.collection('messages')
   .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
     $set: {
-      thumbDown:req.body.thumbDown + 1
+      thumbUp:req.body.thumbUp - 1
     }
   }, {
     sort: {_id: -1},

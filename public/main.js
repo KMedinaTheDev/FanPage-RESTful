@@ -1,21 +1,21 @@
-var thumbUp = document.getElementsByClassName("fa-thumbs-up"); //returns an array of dom objects
+var thumbUpIcon = document.getElementsByClassName("fa-thumbs-up"); //returns an array of dom objects
 var trash = document.getElementsByClassName("fa-trash");
-var thumbDown = document.getElementsByClassName("fa-thumbs-down");
+var thumbDownIcon = document.getElementsByClassName("fa-thumbs-down");
 //appending an event listener toe very single thumb up
-Array.from(thumbUp).forEach(function(element) {
+Array.from(thumbUpIcon).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
         const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
-        // const thumbDown = parseFloat(this.parentNode.parentNode.childNodes[7].innerText)
+    
         fetch('thumbUp', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
             'name': name,
             'msg': msg,
-            'thumbUp':thumbUp,
-            'thumbDown':thumbDown
+            'thumbUp':thumbUp
+
           })
         })
         .then(response => {
@@ -27,20 +27,19 @@ Array.from(thumbUp).forEach(function(element) {
         })
       });
 });
-Array.from(thumbDown).forEach(function(element) {
+Array.from(thumbDownIcon).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
-        // const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
-        const thumbDown = parseFloat(this.parentNode.parentNode.childNodes[7].innerText)
+        const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
         fetch('thumbDown', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
             'name': name,
             'msg': msg,
-            'thumbUp':thumbUp,
-            'thumbDown':thumbDown
+            'thumbUp':thumbUp
+
           })
         })
         .then(response => {
